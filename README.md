@@ -18,3 +18,37 @@ npm install datelib
 var datelib = require("datelib");
 
 ```
+
+## Features
+
+*   Additional function with javascript ```Date``` object.
+
+## Documentation
+
+### Methods
+
+*   [`createTree`](#createTree)
+
+------------------------------------------------
+
+### addDays()
+
+Add days with given date object.
+
+__Arguments__
+
+*   `date` - A javascript date.
+*   `days` - ```number``` of days.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var tomorrow = datelib.addDays(date, 1);
+```
+
+------------------------------------------------
