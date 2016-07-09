@@ -6,7 +6,7 @@
 
 ## About
 
-Datelib is a Node module that provide javascript date functionalities.
+A Node module that provide additional javascript ```Date``` functionalities.
 
 ## Installation
 
@@ -28,6 +28,13 @@ var datelib = require("datelib");
 ### Methods
 
 *   [`addDays`](#addDays)
+*   [`addMonths`](#addMonths)
+*   [`addYears`](#addYears)
+*   [`addHours`](#addHours)
+*   [`addMinutes`](#addMinutes)
+*   [`addSeconds`](#addSeconds)
+*   [`compare`](#compare)
+*   [`compareWithEquals`](#compareWithEquals)
 
 ------------------------------------------------
 
@@ -37,7 +44,7 @@ Add days with given date object.
 
 __Arguments__
 
-*   `date` - A javascript date.
+*   `date` - A javascript ```Date```.
 *   `days` - ```number``` of days.
 
 __Returns__
@@ -48,7 +55,163 @@ __Examples__
 
 ```js
 var date = new Date();
-var tomorrow = datelib.addDays(date, 1);
+var result = datelib.addDays(date, 1);
+```
+
+------------------------------------------------
+
+### addMonths()
+
+Add months with given date object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+*   `months` - ```number``` of months.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var result = datelib.addMonths(date, 1);
+```
+
+------------------------------------------------
+
+### addYears()
+
+Add years with given date object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+*   `years` - ```number``` of years.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var result = datelib.addYears(date, 1);
+```
+
+------------------------------------------------
+
+### addHours()
+
+Add hours with given date object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+*   `hours` - ```number``` of hours.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var result = datelib.addHours(date, 1);
+```
+
+------------------------------------------------
+
+### addMinutes()
+
+Add minutes with given date object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+*   `minutes` - ```number``` of minutes.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var result = datelib.addMinutes(date, 1);
+```
+
+------------------------------------------------
+
+### addSeconds()
+
+Add seconds with given date object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+*   `seconds` - ```number``` of seconds.
+
+__Returns__
+
+*   javascript `date`
+
+__Examples__
+
+```js
+var date = new Date();
+var result = datelib.addSeconds(date, 1);
+```
+
+------------------------------------------------
+
+### compare()
+
+Compare two javascript ```Date``` objects.
+
+__Arguments__
+
+*   `d1` - A javascript ```Date```.
+*   `d2` - A javascript ```Date```.
+
+__Returns__
+
+*   1, -1 or 0
+
+__Examples__
+
+```js
+var d1 = new Date(2016, 0, 1);
+var d2 = new Date(2016, 0, 10);
+var result = datelib.compare(d1, d2);
+```
+
+------------------------------------------------
+
+### compareWithEquals()
+
+Compare two javascript ```Date``` objects with equality check.
+
+__Arguments__
+
+*   `d1` - A javascript ```Date```.
+*   `d2` - A javascript ```Date```.
+
+__Returns__
+
+*   1 or -1
+
+__Examples__
+
+```js
+var d1 = new Date(2016, 0, 1);
+var d2 = new Date(2016, 0, 10);
+var result = datelib.compareWithEquals(d1, d2);
 ```
 
 ------------------------------------------------
