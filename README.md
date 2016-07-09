@@ -27,7 +27,7 @@ var datelib = require("datelib");
 
 ### Methods
 
-*   [`createTree`](#createTree)
+*   [`addDays`](#addDays)
 
 ------------------------------------------------
 
