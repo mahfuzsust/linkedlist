@@ -38,6 +38,8 @@ var datelib = require("datelib");
 
 ------------------------------------------------
 
+<a name="addDays" />
+
 ### addDays()
 
 Add days with given date object.
@@ -59,6 +61,8 @@ var result = datelib.addDays(date, 1);
 ```
 
 ------------------------------------------------
+
+<a name="addMonths" />
 
 ### addMonths()
 
@@ -82,6 +86,8 @@ var result = datelib.addMonths(date, 1);
 
 ------------------------------------------------
 
+<a name="addYears" />
+
 ### addYears()
 
 Add years with given date object.
@@ -103,6 +109,8 @@ var result = datelib.addYears(date, 1);
 ```
 
 ------------------------------------------------
+
+<a name="addHours" />
 
 ### addHours()
 
@@ -126,6 +134,8 @@ var result = datelib.addHours(date, 1);
 
 ------------------------------------------------
 
+<a name="addMinutes" />
+
 ### addMinutes()
 
 Add minutes with given date object.
@@ -147,6 +157,8 @@ var result = datelib.addMinutes(date, 1);
 ```
 
 ------------------------------------------------
+
+<a name="addSeconds" />
 
 ### addSeconds()
 
@@ -170,6 +182,8 @@ var result = datelib.addSeconds(date, 1);
 
 ------------------------------------------------
 
+<a name="compare" />
+
 ### compare()
 
 Compare two javascript ```Date``` objects.
@@ -192,6 +206,8 @@ var result = datelib.compare(d1, d2);
 ```
 
 ------------------------------------------------
+
+<a name="compareWithEquals" />
 
 ### compareWithEquals()
 

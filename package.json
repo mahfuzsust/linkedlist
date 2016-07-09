@@ -1,6 +1,6 @@
 {
   "name": "datelib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Datelib is a javascript node.js module that provide javascript date functionalities.",
   "keywords": ["date", "datelib", "date library", "javascript date"],
   "main": "index.js",
