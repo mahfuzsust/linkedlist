@@ -1,6 +1,6 @@
 {
   "name": "datelib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Datelib is a javascript node.js module that provide javascript date functionalities.",
   "keywords": ["date", "datelib", "date library", "javascript date"],
   "main": "index.js",
@@ -11,11 +11,6 @@
     "type": "git",
     "url": "https://github.com/mahfuzsust/datelib.git"
   },
-  "keywords": [
-    "object",
-    "tree",
-    "structure"
-  ],
   "author": "Mahfuzur Rahman",
   "license": "Apache-2.0",
   "bugs": {
