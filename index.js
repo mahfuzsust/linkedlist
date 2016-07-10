@@ -1,6 +1,9 @@
 /**
  * Created by mahfuz on 6/14/15.
  */
+ 
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 var isValidDate = function(date) {
   return date && date instanceof Date;
@@ -70,6 +73,16 @@ var compareWithEquals = function (d1, d2) {
   else if (+d1 <= +d2) return -1;
 };
 
+var getDayOfTheWeek = function (date) {
+  if(!isValidDate(date)) return null;
+  return days[date.getDay()];
+};
+
+var getMonthOfTheYear = function (date) {
+  if(!isValidDate(date)) return null;
+  return months[date.getMonth()];
+};
+
 exports.addDays = addDays;
 exports.addSeconds = addSeconds;
 exports.addMinutes = addMinutes;
@@ -78,3 +91,5 @@ exports.addMonths = addMonths;
 exports.addYears = addYears;
 exports.compare = compare;
 exports.compareWithEquals = compareWithEquals;
+exports.getDayOfTheWeek = getDayOfTheWeek;
+exports.getMonthOfTheYear = getMonthOfTheYear;
