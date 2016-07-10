@@ -1,101 +1,103 @@
 /**
- * Created by mahfuz on 6/14/15.
+ * Created by mahfuz on 7/10/16.
  */
+ (function () {
+   var en = require('./EN.js');
+   var getDaysOfLanguage = function(lang) {
+     if(!lang) return en.days;
+     switch (lang) {
+       case 'EN':
+         return en.days;
+       default:
+          return en.days;
+     }
+   };
+   var getMonthsOfLanguage = function(lang) {
+     if(!lang) return en.months;
+     switch (lang) {
+       case 'EN':
+         return en.months;
+       default:
+          return en.months;
+     }
+   };
+  var isValidDate = function(date) {
+    return date && date instanceof Date;
+  };
+  var isValidNumber = function(number) {
+    return number && typeof(number) === 'number';
+  };
 
-var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+   Date.prototype.addDays = function (days) {
+     var result = new Date(this.valueOf());
+     if(!isValidNumber(days)) return result;
 
-var isValidDate = function(date) {
-  return date && date instanceof Date;
-};
-var isValidNumber = function(number) {
-  return number && typeof(number) === 'number';
-};
+      result.setDate(result.getDate() + days);
+      return result;
+  };
 
- var addDays = function (date, days) {
-   if(!isValidDate(date)) return null;
-   if(!isValidNumber(days)) return date;
-    var result = new Date(date);
-    result.setDate(result.getDate() + days);
+  Date.prototype.addSeconds = function (seconds) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(seconds)) return result;
+    result.setSeconds(result.getSeconds() + seconds);
     return result;
-};
+  };
 
-var addSeconds = function (date, seconds) {
-  if(!isValidDate(date)) return null;
-  if(!isValidNumber(seconds)) return date;
-   var result = new Date(date);
-  result.setSeconds(result.getSeconds() + seconds);
-  return result;
-};
+  Date.prototype.addMinutes = function (minutes) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(minutes)) return result;
+    result.setMinutes(result.getMinutes() + minutes);
+    return result;
+  };
 
-var addMinutes = function (date, minutes) {
-  if(!isValidDate(date)) return null;
-  if(!isValidNumber(minutes)) return date;
-   var result = new Date(date);
-  result.setMinutes(result.getMinutes() + minutes);
-  return result;
-};
+  Date.prototype.addHours = function (hours) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(hours)) return result;
+    result.setHours(result.getHours() + hours);
+    return result;
+  };
 
-var addHours = function (date, hours) {
-  if(!isValidDate(date)) return null;
-  if(!isValidNumber(hours)) return date;
-   var result = new Date(date);
-  result.setHours(result.getHours() + hours);
-  return result;
-};
+  Date.prototype.addMonths = function (months) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(months)) return result;
+    result.setMonth(result.getMonth() + months);
+    return result;
+  };
 
-var addMonths = function (date, months) {
-  if(!isValidDate(date)) return null;
-  if(!isValidNumber(months)) return date;
-   var result = new Date(date);
-  result.setMonth(result.getMonth() + months);
-  return result;
-};
+  Date.prototype.addYears = function (years) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(years)) return result;
+    result.setFullYear(result.getFullYear() + years);
+    return result;
+  };
 
-var addYears = function (date, years) {
-  if(!isValidDate(date)) return null;
-  if(!isValidNumber(years)) return date;
-   var result = new Date(date);
-  result.setFullYear(result.getFullYear() + years);
-  return result;
-};
+  Date.prototype.compare = function (date) {
+    if(!isValidDate(date)) return null;
+    var result = new Date(this.valueOf());
+    if( +result > +date) return 1;
+    else if (+result < +date) return -1;
+    else return 0;
+  };
 
-var compare = function (d1, d2) {
-  if(!isValidDate(d1) || !isValidDate(d2)) return null;
-  if( +d1 > +d2) return 1;
-  else if (+d1 < +d2) return -1;
-  else return 0;
-};
+  Date.prototype.compareWithEquals = function (date) {
+    if(!isValidDate(date)) return null;
+    var result = new Date(this.valueOf());
+    if( +result >= +date) return 1;
+    else if (+result <= +date) return -1;
+  };
 
-var compareWithEquals = function (d1, d2) {
-  if(!isValidDate(d1) || !isValidDate(d2)) return null;
-  if( +d1 >= +d2) return 1;
-  else if (+d1 <= +d2) return -1;
-};
+  Date.prototype.isBefore = function (date) {
+    if(!isValidDate(date)) return null;
+    var result = new Date(this.valueOf());
+    return result.compare(date) === -1;
+  };
+  Date.prototype.getDayOfTheWeek = function (lang) {
+    var result = new Date(this.valueOf());
+    return getDaysOfLanguage(lang)[result.getDay()];
+  };
 
-var getDayOfTheWeek = function (date) {
-  if(!isValidDate(date)) return null;
-  return days[date.getDay()];
-};
-
-var getMonthOfTheYear = function (date) {
-  if(!isValidDate(date)) return null;
-  return months[date.getMonth()];
-};
-
-var isBefore = function (d1, d2) {
-  if(!isValidDate(d1) || !isValidDate(d2)) return null;
-  return compare(d1, d2) === -1;
-};
-
-exports.addDays = addDays;
-exports.addSeconds = addSeconds;
-exports.addMinutes = addMinutes;
-exports.addHours = addHours;
-exports.addMonths = addMonths;
-exports.addYears = addYears;
-exports.compare = compare;
-exports.compareWithEquals = compareWithEquals;
-exports.getDayOfTheWeek = getDayOfTheWeek;
-exports.getMonthOfTheYear = getMonthOfTheYear;
-exports.isBefore = isBefore;
+  Date.prototype.getMonthOfTheYear = function (lang) {
+    var result = new Date(this.valueOf());
+    return getMonthsOfLanguage(lang)[result.getMonth()];
+  };
+}());

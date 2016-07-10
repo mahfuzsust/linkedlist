@@ -15,8 +15,7 @@ npm install datelib
 ## Usage
 
 ```javascript
-var datelib = require("datelib");
-
+require("datelib");
 ```
 
 ## Features
@@ -35,6 +34,9 @@ var datelib = require("datelib");
 *   [`addSeconds`](#addSeconds)
 *   [`compare`](#compare)
 *   [`compareWithEquals`](#compareWithEquals)
+*   [`getDayOfTheWeek`](#getDayOfTheWeek)
+*   [`getMonthOfTheYear`](#getMonthOfTheYear)
+*   [`isBefore`](#isBefore)
 
 ------------------------------------------------
 
@@ -46,8 +48,7 @@ Add days with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `days` - ```number``` of days.
+*   `days` - ```number``` of days. Support negative value for subtract.
 
 __Returns__
 
@@ -56,8 +57,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addDays(date, 1);
+new Date().addDays(1);
 ```
 
 ------------------------------------------------
@@ -70,8 +70,7 @@ Add months with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `months` - ```number``` of months.
+*   `months` - ```number``` of months. Support negative value for subtract.
 
 __Returns__
 
@@ -80,8 +79,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addMonths(date, 1);
+new Date().addMonths(1);
 ```
 
 ------------------------------------------------
@@ -94,8 +92,7 @@ Add years with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `years` - ```number``` of years.
+*   `years` - ```number``` of years. Support negative value for subtract.
 
 __Returns__
 
@@ -104,8 +101,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addYears(date, 1);
+new Date().addYears(1);
 ```
 
 ------------------------------------------------
@@ -118,8 +114,7 @@ Add hours with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `hours` - ```number``` of hours.
+*   `hours` - ```number``` of hours. Support negative value for subtract.
 
 __Returns__
 
@@ -128,8 +123,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addHours(date, 1);
+new Date().addHours(1);
 ```
 
 ------------------------------------------------
@@ -142,8 +136,7 @@ Add minutes with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `minutes` - ```number``` of minutes.
+*   `minutes` - ```number``` of minutes. Support negative value for subtract.
 
 __Returns__
 
@@ -152,8 +145,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addMinutes(date, 1);
+new Date().addMinutes(1);
 ```
 
 ------------------------------------------------
@@ -166,8 +158,7 @@ Add seconds with given date object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
-*   `seconds` - ```number``` of seconds.
+*   `seconds` - ```number``` of seconds. Support negative value for subtract.
 
 __Returns__
 
@@ -176,8 +167,7 @@ __Returns__
 __Examples__
 
 ```js
-var date = new Date();
-var result = datelib.addSeconds(date, 1);
+new Date().addSeconds(1);
 ```
 
 ------------------------------------------------
@@ -190,21 +180,19 @@ Compare two javascript ```Date``` objects.
 
 __Arguments__
 
-*   `d1` - A javascript ```Date```.
-*   `d2` - A javascript ```Date```.
+*   `date` - A javascript ```Date```.
 
 __Returns__
 
-*   if Return value == -1 then it indicates d1 is less than d2.
-*   if Return value == 1 then it indicates d1 is greater than d2.
-*   if Return value = 0 then it indicates d1 is equal to d2.
+*   if Return value == -1 then it indicates date is greater than given.
+*   if Return value == 1 then it indicates date is less than given.
+*   if Return value = 0 then it indicates date is equal to given.
 
 __Examples__
 
 ```js
 var d1 = new Date(2016, 0, 1);
-var d2 = new Date(2016, 0, 10);
-var result = datelib.compare(d1, d2);
+new Date().compare(d1);
 ```
 
 ------------------------------------------------
@@ -217,20 +205,18 @@ Compare two javascript ```Date``` objects with equality check.
 
 __Arguments__
 
-*   `d1` - A javascript ```Date```.
-*   `d2` - A javascript ```Date```.
+*   `date` - A javascript ```Date```.
 
 __Returns__
 
-*   if Return value == -1 then it indicates d1 is less than or equal to d2.
-*   if Return value == 1 then it indicates d1 is greater than or equal to d2.
+*   if Return value == -1 then it indicates date is greater than or equal to given.
+*   if Return value == 1 then it indicates date is less than or equal to given.
 
 __Examples__
 
 ```js
 var d1 = new Date(2016, 0, 1);
-var d2 = new Date(2016, 0, 10);
-var result = datelib.compareWithEquals(d1, d2);
+new Date().compareWithEquals(d1);
 ```
 
 ------------------------------------------------
@@ -243,7 +229,7 @@ Get day of the week from javascript ```Date``` object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
+*   `lang` - ```string``` Language code (`default` EN)
 
 __Returns__
 
@@ -252,8 +238,7 @@ __Returns__
 __Examples__
 
 ```js
-var d1 = new Date(2016, 0, 1);
-var result = datelib.getDayOfTheWeek(d1); // Returns "Friday"
+new Date().getDayOfTheWeek(); // Returns "Friday"
 ```
 
 ------------------------------------------------
@@ -266,7 +251,7 @@ Get month of the year from javascript ```Date``` object.
 
 __Arguments__
 
-*   `date` - A javascript ```Date```.
+*   `lang` - ```string``` Language code (`default` EN)
 
 __Returns__
 
@@ -275,8 +260,30 @@ __Returns__
 __Examples__
 
 ```js
+new Date().getMonthOfTheYear(); // Returns "January"
+```
+
+------------------------------------------------
+
+<a name="isBefore" />
+
+### isBefore()
+
+check is before by comparing javascript ```Date``` object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+
+__Returns__
+
+*   Return ```boolean```
+
+__Examples__
+
+```js
 var d1 = new Date(2016, 0, 1);
-var result = datelib.getMonthOfTheYear(d1); // Returns "January"
+new Date().isBefore(d1); // Returns "false"
 ```
 
 ------------------------------------------------
