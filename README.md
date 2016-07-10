@@ -35,6 +35,9 @@ var datelib = require("datelib");
 *   [`addSeconds`](#addSeconds)
 *   [`compare`](#compare)
 *   [`compareWithEquals`](#compareWithEquals)
+*   [`getDayOfTheWeek`](#getDayOfTheWeek)
+*   [`getMonthOfTheYear`](#getMonthOfTheYear)
+*   [`isBefore`](#isBefore)
 
 ------------------------------------------------
 
@@ -277,6 +280,31 @@ __Examples__
 ```js
 var d1 = new Date(2016, 0, 1);
 var result = datelib.getMonthOfTheYear(d1); // Returns "January"
+```
+
+------------------------------------------------
+
+<a name="isBefore" />
+
+### isBefore()
+
+check is before by comparing javascript ```Date``` object.
+
+__Arguments__
+
+*   `d1` - A javascript ```Date```.
+*   `d2` - A javascript ```Date```.
+
+__Returns__
+
+*   Return ```boolean```
+
+__Examples__
+
+```js
+var d1 = new Date(2016, 0, 1);
+var d1 = new Date(2016, 0, 5);
+var result = datelib.isBefore(d1, d2); // Returns "true"
 ```
 
 ------------------------------------------------
