@@ -16,7 +16,6 @@ npm install datelib
 
 ```javascript
 var datelib = require("datelib");
-
 ```
 
 ## Features
