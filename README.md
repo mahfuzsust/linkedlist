@@ -15,11 +15,7 @@ npm install datelib
 ## Usage
 
 ```javascript
-<<<<<<< HEAD
 require("datelib");
-=======
-var datelib = require("datelib");
->>>>>>> 905414f95b4bc8fd08e7964ed80ff675f4fbf687
 ```
 
 ## Features
@@ -288,31 +284,6 @@ __Examples__
 ```js
 var d1 = new Date(2016, 0, 1);
 new Date().isBefore(d1); // Returns "false"
-```
-
-------------------------------------------------
-
-<a name="isBefore" />
-
-### isBefore()
-
-check is before by comparing javascript ```Date``` object.
-
-__Arguments__
-
-*   `d1` - A javascript ```Date```.
-*   `d2` - A javascript ```Date```.
-
-__Returns__
-
-*   Return ```boolean```
-
-__Examples__
-
-```js
-var d1 = new Date(2016, 0, 1);
-var d1 = new Date(2016, 0, 5);
-var result = datelib.isBefore(d1, d2); // Returns "true"
 ```
 
 ------------------------------------------------
