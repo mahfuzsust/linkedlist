@@ -18,4 +18,7 @@ describe('#datelib', function () {
   it('checking addYears', function () {
       datelib.compare(datelib.addYears(d1, 1), d4).should.equal(0);
   });
+  it('checking isBefore', function () {
+      datelib.isBefore(d1, d2).should.equal(true);
+  });
 });

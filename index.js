@@ -1,7 +1,7 @@
 /**
  * Created by mahfuz on 6/14/15.
  */
- 
+
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -83,6 +83,11 @@ var getMonthOfTheYear = function (date) {
   return months[date.getMonth()];
 };
 
+var isBefore = function (d1, d2) {
+  if(!isValidDate(d1) || !isValidDate(d2)) return null;
+  return compare(d1, d2) === -1;
+};
+
 exports.addDays = addDays;
 exports.addSeconds = addSeconds;
 exports.addMinutes = addMinutes;
@@ -93,3 +98,4 @@ exports.compare = compare;
 exports.compareWithEquals = compareWithEquals;
 exports.getDayOfTheWeek = getDayOfTheWeek;
 exports.getMonthOfTheYear = getMonthOfTheYear;
+exports.isBefore = isBefore;

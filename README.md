@@ -234,3 +234,49 @@ var result = datelib.compareWithEquals(d1, d2);
 ```
 
 ------------------------------------------------
+
+<a name="getDayOfTheWeek" />
+
+### getDayOfTheWeek()
+
+Get day of the week from javascript ```Date``` object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+
+__Returns__
+
+*   Return ```string```
+
+__Examples__
+
+```js
+var d1 = new Date(2016, 0, 1);
+var result = datelib.getDayOfTheWeek(d1); // Returns "Friday"
+```
+
+------------------------------------------------
+
+<a name="getMonthOfTheYear" />
+
+### getMonthOfTheYear()
+
+Get month of the year from javascript ```Date``` object.
+
+__Arguments__
+
+*   `date` - A javascript ```Date```.
+
+__Returns__
+
+*   Return ```string```
+
+__Examples__
+
+```js
+var d1 = new Date(2016, 0, 1);
+var result = datelib.getMonthOfTheYear(d1); // Returns "January"
+```
+
+------------------------------------------------
