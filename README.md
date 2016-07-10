@@ -195,7 +195,9 @@ __Arguments__
 
 __Returns__
 
-*   1, -1 or 0
+*   if Return value == -1 then it indicates d1 is less than d2.
+*   if Return value == 1 then it indicates d1 is greater than d2.
+*   if Return value = 0 then it indicates d1 is equal to d2.
 
 __Examples__
 
@@ -220,7 +222,8 @@ __Arguments__
 
 __Returns__
 
-*   1 or -1
+*   if Return value == -1 then it indicates d1 is less than or equal to d2.
+*   if Return value == 1 then it indicates d1 is greater than or equal to d2.
 
 __Examples__
 
