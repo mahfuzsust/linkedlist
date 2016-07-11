@@ -71,6 +71,13 @@
     return result;
   };
 
+  Date.prototype.addMilliseconds = function (milliseconds) {
+   var result = new Date(this.valueOf());
+    if(!isValidNumber(milliseconds)) return result;
+    result.setMilliseconds(result.getMilliseconds() + milliseconds);
+    return result;
+  };
+
   Date.prototype.compare = function (date) {
     if(!isValidDate(date)) return null;
     var result = new Date(this.valueOf());

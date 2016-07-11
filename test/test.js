@@ -31,6 +31,10 @@ describe('#datelib', function () {
       d1.addSeconds(1).compare(d5).should.equal(1);
       d1.addSeconds(-1).compare(d5).should.equal(-1);
   });
+  it('checking addMilliseconds', function () {
+      d1.addMilliseconds(1).compare(d5).should.equal(1);
+      d1.addMilliseconds(-1).compare(d5).should.equal(-1);
+  });
   it('checking isBefore', function () {
       d1.isBefore(d5).should.equal(false);
   });
