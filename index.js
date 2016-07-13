@@ -107,4 +107,9 @@
     var result = new Date(this.valueOf());
     return getMonthsOfLanguage(lang)[result.getMonth()];
   };
+  Date.prototype.isLeapYear = function () {
+    var result = new Date(this.valueOf());
+    var y = result.getFullYear()
+    return !((y % 4) || (!(y % 100) && y % 400));
+  };
 }());
