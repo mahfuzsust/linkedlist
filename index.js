@@ -112,4 +112,9 @@
     var y = result.getFullYear()
     return !((y % 4) || (!(y % 100) && y % 400));
   };
+  // http://stackoverflow.com/a/1185804
+  Date.prototype.getDaysInMonth= function(){
+    var d= new Date(this.getFullYear(), this.getMonth()+1, 0);
+    return d.getDate();
+  };
 }());
