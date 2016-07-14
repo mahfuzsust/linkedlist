@@ -26,6 +26,7 @@ require("datelib");
 
 ### Methods
 
+*   [`isLeapYear`](#isLeapYear)
 *   [`addDays`](#addDays)
 *   [`addMonths`](#addMonths)
 *   [`addYears`](#addYears)
@@ -38,6 +39,30 @@ require("datelib");
 *   [`getDayOfTheWeek`](#getDayOfTheWeek)
 *   [`getMonthOfTheYear`](#getMonthOfTheYear)
 *   [`isBefore`](#isBefore)
+*   [`getDaysInMonth`](#getDaysInMonth)
+
+------------------------------------------------
+
+<a name="isLeapYear" />
+
+### isLeapYear()
+
+Check if the year is leap year.
+
+__Arguments__
+
+*   `void`
+
+__Returns__
+
+*   `true` or `false`
+
+__Examples__
+
+```js
+new Date(2012, 0, 1).isLeapYear(); // return true
+new Date(2013, 0, 1).isLeapYear(); // return false
+```
 
 ------------------------------------------------
 
@@ -308,6 +333,31 @@ __Examples__
 var d1 = new Date(2016, 0, 1);
 new Date().isBefore(d1); // Returns "false"
 ```
+
+------------------------------------------------
+
+<a name="getDaysInMonth" />
+
+### getDaysInMonth()
+
+check is before by comparing javascript ```Date``` object.
+
+__Arguments__
+
+*   `void`
+
+__Returns__
+
+*   ```number``` of days
+
+__Examples__
+
+```js
+new Date(2016, 0, 1).getDaysInMonth(); // Returns 31
+new Date(2016, 1, 1).getDaysInMonth(); // Returns 29
+```
+
+------------------------------------------------
 
 ## License
 

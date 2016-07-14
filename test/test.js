@@ -9,6 +9,7 @@ var d2 = new Date(2013, 0, 2);
 var d3 = new Date(2013, 1, 1);
 var d4 = new Date(2014, 0, 1);
 var d5 = new Date(2013, 0, 1);
+var d6 = new Date(2012, 0, 1);
 describe('#datelib', function () {
   it('checking addDays', function () {
       d1.addDays(1).compare(d2).should.equal(0);
@@ -49,5 +50,13 @@ describe('#datelib', function () {
   });
   it('checking getMonthOfTheYear', function () {
       d1.getMonthOfTheYear().should.equal("January");
+  });
+  it('checking getDaysInMonth', function () {
+      d1.getDaysInMonth().should.equal(31);
+      d3.getDaysInMonth().should.equal(28);
+  });
+  it('checking isLeapYear', function () {
+      d1.isLeapYear().should.equal(false);
+      d6.isLeapYear().should.equal(true);
   });
 });
