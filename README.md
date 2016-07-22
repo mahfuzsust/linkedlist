@@ -28,12 +28,12 @@ var DoublyLinkedList = LinkedList.Doubly();
 
 ### Methods
 
-*   [`add`](#add)
-*   [`delete`](#delete)
-*   [`indexOf`](#indexOf)
-*   [`each`](#each)
-*   [`isExist`](#isExist)
-*   [`length`](#length)
+*   [`.add()`](#add)
+*   [`.delete()`](#delete)
+*   [`.indexOf()`](#indexOf)
+*   [`.each()`](#each)
+*   [`.isExist()`](#isExist)
+*   [`.length()`](#length)
 
 
 ------------------------------------------------
