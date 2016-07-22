@@ -1,22 +1,22 @@
 {
-  "name": "datelib",
-  "version": "2.2.0",
-  "description": "Datelib is a Node module that provide additional javascript date functionalities.",
-  "keywords": ["date", "datelib", "date library", "javascript date"],
+  "name": "LinkedList",
+  "version": "1.0.2",
+  "description": "LinkedList is a data structure provided in javascript",
+  "keywords": ["list", "linked-list", "single linked-list","double linked-list", "javascript"],
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mahfuzsust/datelib.git"
+    "url": "https://github.com/mahfuzsust/linkedlist.git"
   },
   "author": "Mahfuzur Rahman",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/mahfuzsust/datelib/issues"
+    "url": "https://github.com/mahfuzsust/linkedlist/issues"
   },
-  "homepage": "https://github.com/mahfuzsust/datelib#readme",
+  "homepage": "https://github.com/mahfuzsust/linkedlist#readme",
   "devDependencies": {
     "chai": "^3.0.0",
     "mocha": "^2.2.5"

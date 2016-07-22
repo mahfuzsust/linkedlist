@@ -1,361 +1,40 @@
-# datelib
+# LinkedList
 
-[![NPM version](https://img.shields.io/npm/v/datelib.svg?style=flat)](https://www.npmjs.com/package/datelib)
-[![Downloads](https://img.shields.io/npm/dm/datelib.svg?style=flat)](https://npmjs.org/package/datelib)
-[![apache license](http://img.shields.io/badge/license-apache2-blue.svg?style=flat)](https://github.com/mahfuzsust/datelib/blob/master/LICENSE)
+[![NPM version](https://img.shields.io/npm/v/LinkedList.svg?style=flat)](https://www.npmjs.com/package/LinkedList)
+[![Downloads](https://img.shields.io/npm/dm/LinkedList.svg?style=flat)](https://npmjs.org/package/LinkedList)
+[![apache license](http://img.shields.io/badge/license-apache2-blue.svg?style=flat)](https://github.com/mahfuzsust/LinkedList/blob/master/LICENSE)
 
 ## About
 
-A Node module that provide additional javascript ```Date``` functionalities.
+A Singly and Doubly Linked List
 
 ## Installation
 
-npm install datelib
+npm install LinkedList
 
 ## Usage
 
 ```javascript
-require("datelib");
+var LinkedList = require("LinkedList");
+var SinglyLinkedList = LinkedList.Singly();
+var DoublyLinkedList = LinkedList.Doubly();
 ```
 
 ## Features
 
-*   Additional function with javascript ```Date``` object.
+*   Provides Linked list data structure.
 
 ## Documentation
 
 ### Methods
 
-*   [`isLeapYear`](#isLeapYear)
-*   [`addDays`](#addDays)
-*   [`addMonths`](#addMonths)
-*   [`addYears`](#addYears)
-*   [`addHours`](#addHours)
-*   [`addMinutes`](#addMinutes)
-*   [`addSeconds`](#addSeconds)
-*   [`addMilliseconds`](#addMilliseconds)
-*   [`compare`](#compare)
-*   [`compareWithEquals`](#compareWithEquals)
-*   [`getDayOfTheWeek`](#getDayOfTheWeek)
-*   [`getMonthOfTheYear`](#getMonthOfTheYear)
-*   [`isBefore`](#isBefore)
-*   [`getDaysInMonth`](#getDaysInMonth)
+*   [`add`](#add)
+*   [`delete`](#delete)
+*   [`indexOf`](#indexOf)
+*   [`each`](#each)
+*   [`isExist`](#isExist)
+*   [`length`](#length)
 
-------------------------------------------------
-
-<a name="isLeapYear" />
-
-### isLeapYear()
-
-Check if the year is leap year.
-
-__Arguments__
-
-*   `void`
-
-__Returns__
-
-*   `true` or `false`
-
-__Examples__
-
-```js
-new Date(2012, 0, 1).isLeapYear(); // return true
-new Date(2013, 0, 1).isLeapYear(); // return false
-```
-
-------------------------------------------------
-
-<a name="addDays" />
-
-### addDays()
-
-Add days with given date object.
-
-__Arguments__
-
-*   `days` - ```number``` of days. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addDays(1);
-```
-
-------------------------------------------------
-
-<a name="addMonths" />
-
-### addMonths()
-
-Add months with given date object.
-
-__Arguments__
-
-*   `months` - ```number``` of months. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addMonths(1);
-```
-
-------------------------------------------------
-
-<a name="addYears" />
-
-### addYears()
-
-Add years with given date object.
-
-__Arguments__
-
-*   `years` - ```number``` of years. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addYears(1);
-```
-
-------------------------------------------------
-
-<a name="addHours" />
-
-### addHours()
-
-Add hours with given date object.
-
-__Arguments__
-
-*   `hours` - ```number``` of hours. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addHours(1);
-```
-
-------------------------------------------------
-
-<a name="addMinutes" />
-
-### addMinutes()
-
-Add minutes with given date object.
-
-__Arguments__
-
-*   `minutes` - ```number``` of minutes. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addMinutes(1);
-```
-
-------------------------------------------------
-
-<a name="addSeconds" />
-
-### addSeconds()
-
-Add seconds with given date object.
-
-__Arguments__
-
-*   `seconds` - ```number``` of seconds. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addSeconds(1);
-```
-
-------------------------------------------------
-
-<a name="addSeconds" />
-
-### addMilliseconds()
-
-Add seconds with given date object.
-
-__Arguments__
-
-*   `milliseconds` - ```number``` of Milliseconds. Support negative value for subtract.
-
-__Returns__
-
-*   javascript `date`
-
-__Examples__
-
-```js
-new Date().addMilliseconds(1);
-```
-
-------------------------------------------------
-
-<a name="compare" />
-
-### compare()
-
-Compare two javascript ```Date``` objects.
-
-__Arguments__
-
-*   `date` - A javascript ```Date```.
-
-__Returns__
-
-*   if Return value == -1 then it indicates date is greater than given.
-*   if Return value == 1 then it indicates date is less than given.
-*   if Return value = 0 then it indicates date is equal to given.
-
-__Examples__
-
-```js
-var d1 = new Date(2016, 0, 1);
-new Date().compare(d1);
-```
-
-------------------------------------------------
-
-<a name="compareWithEquals" />
-
-### compareWithEquals()
-
-Compare two javascript ```Date``` objects with equality check.
-
-__Arguments__
-
-*   `date` - A javascript ```Date```.
-
-__Returns__
-
-*   if Return value == -1 then it indicates date is greater than or equal to given.
-*   if Return value == 1 then it indicates date is less than or equal to given.
-
-__Examples__
-
-```js
-var d1 = new Date(2016, 0, 1);
-new Date().compareWithEquals(d1);
-```
-
-------------------------------------------------
-
-<a name="getDayOfTheWeek" />
-
-### getDayOfTheWeek()
-
-Get day of the week from javascript ```Date``` object.
-
-__Arguments__
-
-*   `lang` - ```string``` Language code (`default` EN)
-
-__Returns__
-
-*   Return ```string```
-
-__Examples__
-
-```js
-new Date().getDayOfTheWeek(); // Returns "Friday"
-```
-
-------------------------------------------------
-
-<a name="getMonthOfTheYear" />
-
-### getMonthOfTheYear()
-
-Get month of the year from javascript ```Date``` object.
-
-__Arguments__
-
-*   `lang` - ```string``` Language code (`default` EN)
-
-__Returns__
-
-*   Return ```string```
-
-__Examples__
-
-```js
-new Date().getMonthOfTheYear(); // Returns "January"
-```
-
-------------------------------------------------
-
-<a name="isBefore" />
-
-### isBefore()
-
-check is before by comparing javascript ```Date``` object.
-
-__Arguments__
-
-*   `date` - A javascript ```Date```.
-
-__Returns__
-
-*   Return ```boolean```
-
-__Examples__
-
-```js
-var d1 = new Date(2016, 0, 1);
-new Date().isBefore(d1); // Returns "false"
-```
-
-------------------------------------------------
-
-<a name="getDaysInMonth" />
-
-### getDaysInMonth()
-
-check is before by comparing javascript ```Date``` object.
-
-__Arguments__
-
-*   `void`
-
-__Returns__
-
-*   ```number``` of days
-
-__Examples__
-
-```js
-new Date(2016, 0, 1).getDaysInMonth(); // Returns 31
-new Date(2016, 1, 1).getDaysInMonth(); // Returns 29
-```
 
 ------------------------------------------------
 
